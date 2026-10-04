@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<!-- STYLE: Lance Wyman and Otl Aicher, The Market Board (pictogram board with a receipt tape and a price thermometer) | WHY: every dish visible at once and the price falling in view wins the first minute on a phone, which is where meal prep is ordered on Thursday night | ALT: Paula Scher and Emory Douglas, The Kitchen Pass (dark horizontal ticket rail), a better poster and a slower order form -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout preview, Fina&#x27;s</title>
+<meta name="description" content="Pickup or delivery, Sunday windows, calendar file and a preview order. Fina&#x27;s is not taking payments yet.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&amp;display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="checkout">
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="p-circle" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></symbol>
+  <symbol id="p-square" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34"/></symbol>
+  <symbol id="p-triangle" viewBox="0 0 48 48"><path d="M24 6 44 42H4z"/></symbol>
+  <symbol id="p-wave" viewBox="0 0 48 48"><path d="M2 18c6 0 6-8 12-8s6 8 12 8 6-8 12-8 6 8 10 8v8c-4 0-4-8-10-8s-6 8-12 8-6-8-12-8-6 8-12 8zm0 14c6 0 6-8 12-8s6 8 12 8 6-8 12-8 6 8 10 8v8c-4 0-4-8-10-8s-6 8-12 8-6-8-12-8-6 8-12 8z"/></symbol>
+  <symbol id="p-ribbon" viewBox="0 0 48 48"><path d="M6 8h36v8H6zm0 12h36v8H6zm0 12h36v8H6z"/></symbol>
+  <symbol id="p-egg" viewBox="0 0 48 48"><path d="M24 4c8 0 16 14 16 26a16 16 0 0 1-32 0C8 18 16 4 24 4z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M3 10h18v4H3z"/></symbol>
+</svg>
+<p id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+<header class="masthead">
+  <a class="mark" href="./index.html">Fina's</a>
+  <nav aria-label="Pages">
+    <a href="./index.html">Board</a>
+    <a href="./menu.html">Menu</a>
+    <a href="./how.html">How it works</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Checkout</h1>
+  <p class="notice preview" role="note"><strong>PREVIEW.</strong> Fina's is not taking payments or storing information yet; this is a working preview. Nothing you type here leaves this device.</p>
+  <p class="notice" data-not-this-weekend hidden>Heads up: these meals are for <strong data-sunday>the coming board Sunday</strong>, not this weekend.</p>
+  <p class="notice js-only" id="empty-bag" hidden>Your bag is empty. <a href="./index.html">Add meals on the board</a> and come back.</p>
+  <noscript><p class="notice">The preview order form needs JavaScript. Hours and fees are below and on the How it works page.</p></noscript>
+
+  <div class="co">
+    <div class="co-main">
+      <form id="co-form" class="js-only" novalidate>
+        <section class="step">
+          <h2><span class="n">1</span>Pickup or delivery</h2>
+          <div class="choices">
+            <label><input type="radio" name="mode" value="pickup"> Pickup in Downey, Sunday 5:30 to 8:30 PM</label>
+            <label><input type="radio" name="mode" value="delivery"> Delivery, Sunday 5:30 to 9:00 PM</label>
+          </div>
+          <p class="caption">Sample Sunday windows until Fina confirms hers.</p>
+        </section>
+
+        <section class="step">
+          <h2><span class="n">2</span>Your ZIP, before anything else</h2>
+          <div class="zip-form">
+            <label class="visually-hidden" for="co-zip">ZIP code</label>
+            <input class="field" id="co-zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="ZIP" autocomplete="postal-code">
+            <button type="button" class="btn" id="co-zip-check">Check</button>
+          </div>
+          <p class="zip-answer" id="co-zip-answer" role="status"></p>
+          <p class="zip-table">Sample fees: $4 around Downey, Bell Gardens and Long Beach (902 and 908), $7 across the rest of LA County, $9 in Orange County, free at 15 meals. Elsewhere, pickup only.</p>
+        </section>
+
+        <section class="step" id="pickup-block">
+          <h2><span class="n">3</span>Pickup time</h2>
+          <p>Downey pickup, address and hours coming from Fina. Tap a half hour; the bars show how busy each one usually is (sample pattern).</p>
+          <div class="heat" role="radiogroup" aria-label="Pickup time">
+          <label><span class="bar"><i class="b1"></i></span><input type="radio" name="slot" value="17:30" aria-describedby="heat-key"><span class="t">5:30 PM<br>not busy</span></label>
+          <label><span class="bar"><i class="b2"></i></span><input type="radio" name="slot" value="18:00" aria-describedby="heat-key"><span class="t">6:00 PM<br>medium</span></label>
+          <label><span class="bar"><i class="b3"></i></span><input type="radio" name="slot" value="18:30" aria-describedby="heat-key"><span class="t">6:30 PM<br>busiest</span></label>
+          <label><span class="bar"><i class="b3"></i></span><input type="radio" name="slot" value="19:00" aria-describedby="heat-key"><span class="t">7:00 PM<br>busiest</span></label>
+          <label><span class="bar"><i class="b2"></i></span><input type="radio" name="slot" value="19:30" aria-describedby="heat-key"><span class="t">7:30 PM<br>medium</span></label>
+          <label><span class="bar"><i class="b1"></i></span><input type="radio" name="slot" value="20:00" aria-describedby="heat-key"><span class="t">8:00 PM<br>not busy</span></label>
+          </div>
+          <p class="heat-key" id="heat-key"><span><i style="height:6px"></i>not busy</span><span><i style="height:10px"></i>medium</span><span><i></i>busiest</span></p>
+        </section>
+
+        <section class="step" id="delivery-block" hidden>
+          <h2><span class="n">3</span>Delivery address</h2>
+          <p>Delivery arrives Sunday 5:30 to 9:00 PM (sample window). No time choice yet; the ZIP sets the fee above.</p>
+          <div class="fields">
+            <div class="wide"><label class="lbl" for="street">Street</label><input class="field" id="street" name="street" autocomplete="street-address"></div>
+            <div><label class="lbl" for="unit">Unit</label><input class="field" id="unit" name="unit"></div>
+            <div><label class="lbl" for="city">City</label><input class="field" id="city" name="city" autocomplete="address-level2"></div>
+            <div class="wide"><label class="lbl" for="notes">Notes for the driver</label><input class="field" id="notes" name="notes"></div>
+          </div>
+        </section>
+
+        <section class="step">
+          <h2><span class="n">4</span>Who the bag is for</h2>
+          <p>Optional in the preview. Nothing here is sent or stored off this device.</p>
+          <div class="fields">
+            <div><label class="lbl" for="first">First name</label><input class="field" id="first" name="first" autocomplete="given-name"></div>
+            <div><label class="lbl" for="lastn">Last name</label><input class="field" id="lastn" name="last" autocomplete="family-name"></div>
+            <div><label class="lbl" for="phone">Phone</label><input class="field" id="phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div><label class="lbl" for="email">Email</label><input class="field" id="email" name="email" type="email" autocomplete="email"></div>
+          </div>
+          <label class="check"><input type="checkbox" name="remind"><span>Text me a reminder before the Thursday close. Optional.</span></label>
+          <label class="check"><input type="checkbox" name="updates"><span>Email me updates about this order. Optional.</span></label>
+          <label class="check"><input type="checkbox" name="news"><span>Send me the new board on Fridays. Optional.</span></label>
+        </section>
+
+        <section class="step">
+          <h2><span class="n">5</span>Calendar and confirm</h2>
+          <p>Unclaimed pickups are the most common way to lose a Sunday meal. Put it on the calendar now.</p>
+          <p style="padding:10px 0"><a class="btn" data-ics href="#" download="finas-sunday.ics">Add Sunday to my calendar (.ics)</a></p>
+          <button type="submit" class="btn btn-ink">Place preview order</button>
+          <p class="tape-msg" id="co-msg" role="status"></p>
+        </section>
+      </form>
+
+      <section id="confirm" class="confirm" hidden aria-live="polite">
+        <h2>Preview order recorded on this device</h2>
+        <p class="num" data-order-number></p>
+        <dl>
+          <div><dt>Sunday</dt><dd data-order-sunday></dd></div>
+          <div><dt>How</dt><dd data-order-mode></dd></div>
+          <div><dt>Total</dt><dd data-order-total></dd></div>
+          <div><dt>Status</dt><dd data-order-status></dd></div>
+        </dl>
+        <p style="padding:16px 0 8px"><a class="btn" data-ics-confirm href="#" download="finas-sunday.ics">Add Sunday to my calendar (.ics)</a></p>
+        <p style="padding:8px 0"><button type="button" class="btn" data-act="cancel-order">Cancel before Thursday</button></p>
+        <p><a href="./index.html">Back to the board</a></p>
+      </section>
+
+      <section class="prose no-js-only">
+        <h2>Sundays</h2>
+        <p>Downey pickup, address and hours coming from Fina. Pickup window Sunday 5:30 to 8:30 PM, delivery Sunday 5:30 to 9:00 PM (sample). Board closes Thursday 11:59 PM Pacific.</p>
+      </section>
+    </div>
+    <div class="co-side">
+<aside class="tape" aria-label="Your bag">
+  <div class="tape-inner">
+    <h2>Your bag</h2>
+    <p class="sunday">For <strong data-sunday>the Sunday after the Thursday close</strong></p>
+    <ul class="lines"><li class="empty">Nothing on the tape yet. Add a dish and it prints here.</li></ul>
+    <div class="ladder">
+      <span class="k">Price ladder (sample)</span>
+      <div class="therm" role="img" aria-label="Meals toward the 15 meal price break">
+        <div class="fill"></div><i class="mark" data-at="5"></i><i class="mark" data-at="10"></i>
+      </div>
+      <div class="therm-labels"><span>5 meals</span><span>10 meals</span><span>15 meals</span></div>
+      <p class="next">Every meal is <strong>$13.95</strong>. At 5 meals each one drops 50 cents, at 10 a dollar, at 15 a dollar fifty and delivery is free.</p>
+      <p class="saved">No ladder savings yet</p>
+    </div>
+    <div class="totals">
+      <div><span data-count>0 meals</span><span data-sub>$0.00</span></div>
+      <div class="delivery"><span>Sunday delivery <small>(free at 15 meals)</small></span><span data-fee>By ZIP</span></div>
+      <div class="total"><span>Total</span><span data-total>$0.00</span></div>
+    </div>
+      <div class="tape-actions js-only">
+        <a class="btn" href="./index.html">Change the bag</a>
+      </div>
+  </div>
+</aside></div>
+  </div>
+</main>
+<footer class="foot">
+  <div>
+    <p class="sample-line">Prices are a sample until Fina confirms hers.</p>
+    <p>Fina's Meal Kitchen, Downey, California. American fusion, something for everyone.</p>
+    <p>Preview site. Fina's is not taking payments or storing information yet.</p>
+  </div>
+  <div class="hours">
+    <strong>Sundays</strong>
+    <span>Downey pickup, address and hours coming from Fina.</span>
+    <span>Pickup window Sunday 5:30 to 8:30 PM, delivery Sunday 5:30 to 9:00 PM (sample)</span>
+    <span>Board closes Thursday 11:59 PM, new board every Friday</span>
+  </div>
+  <nav aria-label="Footer">
+    <a href="./index.html">Board</a>
+    <a href="./menu.html">Menu</a>
+    <a href="./how.html">How it works</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+    <a href="./checkout.html">Checkout</a>
+    <a href="./card.html">Print the Sunday card</a>
+  </nav>
+</footer>
+<script src="./app.js"></script>
+</body>
+</html>

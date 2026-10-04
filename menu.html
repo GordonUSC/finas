@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<!-- STYLE: Lance Wyman and Otl Aicher, The Market Board (pictogram board with a receipt tape and a price thermometer) | WHY: every dish visible at once and the price falling in view wins the first minute on a phone, which is where meal prep is ordered on Thursday night | ALT: Paula Scher and Emory Douglas, The Kitchen Pass (dark horizontal ticket rail), a better poster and a slower order form -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu, all 57 dishes, Fina&#x27;s</title>
+<meta name="description" content="Every dish on Fina&#x27;s Meal Kitchen&#x27;s menu grouped by protein, with search, allergen filters and this week&#x27;s board marked.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&amp;display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="menu">
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="p-circle" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></symbol>
+  <symbol id="p-square" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34"/></symbol>
+  <symbol id="p-triangle" viewBox="0 0 48 48"><path d="M24 6 44 42H4z"/></symbol>
+  <symbol id="p-wave" viewBox="0 0 48 48"><path d="M2 18c6 0 6-8 12-8s6 8 12 8 6-8 12-8 6 8 10 8v8c-4 0-4-8-10-8s-6 8-12 8-6-8-12-8-6 8-12 8zm0 14c6 0 6-8 12-8s6 8 12 8 6-8 12-8 6 8 10 8v8c-4 0-4-8-10-8s-6 8-12 8-6-8-12-8-6 8-12 8z"/></symbol>
+  <symbol id="p-ribbon" viewBox="0 0 48 48"><path d="M6 8h36v8H6zm0 12h36v8H6zm0 12h36v8H6z"/></symbol>
+  <symbol id="p-egg" viewBox="0 0 48 48"><path d="M24 4c8 0 16 14 16 26a16 16 0 0 1-32 0C8 18 16 4 24 4z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M3 10h18v4H3z"/></symbol>
+</svg>
+<p id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+<header class="masthead">
+  <a class="mark" href="./index.html">Fina's</a>
+  <nav aria-label="Pages">
+    <a href="./index.html">Board</a>
+    <a href="./menu.html" aria-current="page">Menu</a>
+    <a href="./how.html">How it works</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Menu</h1>
+  <p class="lede">All 57 dishes from Fina's Meal Kitchen, grouped by protein. Twelve are on this week's board. Prices are a sample until Fina confirms hers.</p>
+  <form id="menu-controls" class="filters js-only" role="search">
+    <div class="grow">
+      <label class="lbl" for="q">Search the menu</label>
+      <input class="field" id="q" name="q" type="search" placeholder="chipotle, lemon, fried rice" autocomplete="off">
+    </div>
+    <fieldset>
+      <legend>Leave out</legend>
+      <label class="check"><input type="checkbox" name="exclude" value="shellfish"><span>Shellfish</span></label>
+      <label class="check"><input type="checkbox" name="exclude" value="fish"><span>Fish</span></label>
+      <label class="check"><input type="checkbox" name="exclude" value="dairy"><span>Dairy</span></label>
+      <label class="check"><input type="checkbox" name="exclude" value="wheat"><span>Wheat</span></label>
+      <label class="check"><input type="checkbox" name="exclude" value="soy"><span>Soy</span></label>
+      <label class="check"><input type="checkbox" name="exclude" value="tree nuts"><span>Tree nuts</span></label>
+      <label class="check"><input type="checkbox" name="exclude" value="egg"><span>Egg</span></label>
+      <label class="check"><input type="checkbox" name="mild"><span>Heat in the name</span></label>
+    </fieldset>
+    <fieldset>
+      <legend>Only</legend>
+      <label class="check"><input type="checkbox" name="kind" value="chicken"><span>Chicken</span></label>
+      <label class="check"><input type="checkbox" name="kind" value="beef"><span>Beef</span></label>
+      <label class="check"><input type="checkbox" name="kind" value="fish"><span>Fish</span></label>
+      <label class="check"><input type="checkbox" name="kind" value="shrimp"><span>Shrimp</span></label>
+      <label class="check"><input type="checkbox" name="kind" value="pasta"><span>Pasta</span></label>
+      <label class="check"><input type="checkbox" name="kind" value="breakfast"><span>Breakfast</span></label>
+      <label class="check"><input type="checkbox" name="board"><span>This week's board only</span></label>
+    </fieldset>
+    <p id="menu-count" role="status" style="font-weight:700">57 of 57 dishes</p>
+  </form>
+  
+  <section class="menu-group" data-kind="chicken">
+    <h2><span class="gk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>Chicken <span class="gc">26</span></h2>
+    <ul class="menu-list">
+    <li class="menu-item" data-dish data-id="al-pastor-chicken" data-name="Al Pastor Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Al Pastor Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="caribbean-jerk-chicken" data-name="Caribbean Jerk Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Caribbean Jerk Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="chicken-fajitas" data-name="Chicken Fajitas" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Chicken Fajitas</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="chicken-fried-rice" data-name="Chicken Fried Rice" data-kind="chicken" data-al="soy" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Chicken Fried Rice</h3><ul class="allergens" aria-label="Allergens and heat"><li>soy</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="chicken-piccata" data-name="Chicken Piccata" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Chicken Piccata</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="chipotle-chicken" data-name="Chipotle Chicken" data-kind="chicken" data-al="" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Chipotle Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="cowboy-chicken" data-name="Cowboy Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg><img src="./img/dish-1.jpg" width="600" height="450" alt="Cowboy Chicken, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true"></span>
+      <div class="mt"><h3>Cowboy Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="golden-garlic-chicken" data-name="Golden Garlic Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Golden Garlic Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="greek-chicken" data-name="Greek Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Greek Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="hickory-bbq-chicken" data-name="Hickory BBQ Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Hickory BBQ Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="honey-teriyaki-chicken" data-name="Honey Teriyaki Chicken" data-kind="chicken" data-al="soy" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Honey Teriyaki Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li>soy</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="jalapeno-lime-chicken" data-name="Jalapeno Lime Chicken" data-kind="chicken" data-al="" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Jalapeno Lime Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="lemon-pepper-chicken" data-name="Lemon Pepper Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Lemon Pepper Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="loaded-mushroom-chicken" data-name="Loaded Mushroom Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Loaded Mushroom Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="mango-habanero-chicken" data-name="Mango Habanero Chicken" data-kind="chicken" data-al="" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Mango Habanero Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="miso-honey-garlic-chicken" data-name="Miso Honey Garlic Chicken" data-kind="chicken" data-al="soy" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Miso Honey Garlic Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li>soy</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="orange-chicken" data-name="Orange Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Orange Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="peri-peri-chicken" data-name="Peri Peri Chicken" data-kind="chicken" data-al="" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Peri Peri Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="rosemary-chicken" data-name="Rosemary Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Rosemary Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="ruby-charred-chicken" data-name="Ruby Charred Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Ruby Charred Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="southwest-chicken" data-name="Southwest Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Southwest Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="spicy-chicken-scampi" data-name="Spicy Chicken Scampi" data-kind="chicken" data-al="" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Spicy Chicken Scampi</h3><ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="spicy-diabla-chicken" data-name="Spicy Diabla Chicken" data-kind="chicken" data-al="" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Spicy Diabla Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="sweet-and-spicy-chicken" data-name="Sweet and Spicy Chicken" data-kind="chicken" data-al="" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Sweet and Spicy Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="sweet-bourbon-chicken" data-name="Sweet Bourbon Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Sweet Bourbon Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="thai-chicken" data-name="Thai Chicken" data-kind="chicken" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--chicken);color:var(--on-chicken)"><svg aria-hidden="true"><use href="#p-circle"/></svg></span>
+      <div class="mt"><h3>Thai Chicken</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    </ul>
+  </section>
+  <section class="menu-group" data-kind="beef">
+    <h2><span class="gk" style="background:var(--beef);color:var(--on-beef)"><svg aria-hidden="true"><use href="#p-square"/></svg></span>Beef <span class="gc">7</span></h2>
+    <ul class="menu-list">
+    <li class="menu-item" data-dish data-id="black-garlic-citrus-steak" data-name="Black Garlic Citrus Steak" data-kind="beef" data-al="" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--beef);color:var(--on-beef)"><svg aria-hidden="true"><use href="#p-square"/></svg><img src="./img/dish-4.jpg" width="600" height="450" alt="Black Garlic Citrus Steak, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true"></span>
+      <div class="mt"><h3>Black Garlic Citrus Steak</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="hawaiian-jalapeno-beef" data-name="Hawaiian Jalapeno Beef" data-kind="beef" data-al="" data-spicy="1" data-board="1">
+      <span class="mk" style="background:var(--beef);color:var(--on-beef)"><svg aria-hidden="true"><use href="#p-square"/></svg><img src="./img/dish-3.jpg" width="600" height="450" alt="Hawaiian Jalapeno Beef, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true"></span>
+      <div class="mt"><h3>Hawaiian Jalapeno Beef</h3><ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="korean-beef" data-name="Korean Beef" data-kind="beef" data-al="soy" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--beef);color:var(--on-beef)"><svg aria-hidden="true"><use href="#p-square"/></svg></span>
+      <div class="mt"><h3>Korean Beef</h3><ul class="allergens" aria-label="Allergens and heat"><li>soy</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="mexican-beef-bowl" data-name="Mexican Beef Bowl" data-kind="beef" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--beef);color:var(--on-beef)"><svg aria-hidden="true"><use href="#p-square"/></svg></span>
+      <div class="mt"><h3>Mexican Beef Bowl</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="shepherds-pie" data-name="Shepherd&#x27;s Pie" data-kind="beef" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--beef);color:var(--on-beef)"><svg aria-hidden="true"><use href="#p-square"/></svg></span>
+      <div class="mt"><h3>Shepherd's Pie</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="smoke-house-beef" data-name="Smoke House Beef" data-kind="beef" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--beef);color:var(--on-beef)"><svg aria-hidden="true"><use href="#p-square"/></svg></span>
+      <div class="mt"><h3>Smoke House Beef</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="tex-mex-beef" data-name="Tex Mex Beef" data-kind="beef" data-al="" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--beef);color:var(--on-beef)"><svg aria-hidden="true"><use href="#p-square"/></svg></span>
+      <div class="mt"><h3>Tex Mex Beef</h3><ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul></div>
+      
+    </li>
+    </ul>
+  </section>
+  <section class="menu-group" data-kind="fish">
+    <h2><span class="gk" style="background:var(--fish);color:var(--on-fish)"><svg aria-hidden="true"><use href="#p-wave"/></svg></span>Fish <span class="gc">7</span></h2>
+    <ul class="menu-list">
+    <li class="menu-item" data-dish data-id="asian-fish-fajitas" data-name="Asian Fish Fajitas" data-kind="fish" data-al="fish" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--fish);color:var(--on-fish)"><svg aria-hidden="true"><use href="#p-wave"/></svg></span>
+      <div class="mt"><h3>Asian Fish Fajitas</h3><ul class="allergens" aria-label="Allergens and heat"><li>fish</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="chili-lime-fish" data-name="Chili Lime Fish" data-kind="fish" data-al="fish" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--fish);color:var(--on-fish)"><svg aria-hidden="true"><use href="#p-wave"/></svg></span>
+      <div class="mt"><h3>Chili Lime Fish</h3><ul class="allergens" aria-label="Allergens and heat"><li>fish</li><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="chimichurri-fish" data-name="Chimichurri Fish" data-kind="fish" data-al="fish" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--fish);color:var(--on-fish)"><svg aria-hidden="true"><use href="#p-wave"/></svg><img src="./img/dish-5.jpg" width="600" height="450" alt="Chimichurri Fish, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true"></span>
+      <div class="mt"><h3>Chimichurri Fish</h3><ul class="allergens" aria-label="Allergens and heat"><li>fish</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="garlic-herb-fish" data-name="Garlic Herb Fish" data-kind="fish" data-al="fish" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--fish);color:var(--on-fish)"><svg aria-hidden="true"><use href="#p-wave"/></svg></span>
+      <div class="mt"><h3>Garlic Herb Fish</h3><ul class="allergens" aria-label="Allergens and heat"><li>fish</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="lemon-butter-fish" data-name="Lemon Butter Fish" data-kind="fish" data-al="fish,dairy" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--fish);color:var(--on-fish)"><svg aria-hidden="true"><use href="#p-wave"/></svg></span>
+      <div class="mt"><h3>Lemon Butter Fish</h3><ul class="allergens" aria-label="Allergens and heat"><li>fish</li><li>dairy</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="millionaire-fish" data-name="Millionaire Fish" data-kind="fish" data-al="fish" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--fish);color:var(--on-fish)"><svg aria-hidden="true"><use href="#p-wave"/></svg></span>
+      <div class="mt"><h3>Millionaire Fish</h3><ul class="allergens" aria-label="Allergens and heat"><li>fish</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="spicy-coconut-curry-fish" data-name="Spicy Coconut Curry Fish" data-kind="fish" data-al="fish" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--fish);color:var(--on-fish)"><svg aria-hidden="true"><use href="#p-wave"/></svg></span>
+      <div class="mt"><h3>Spicy Coconut Curry Fish</h3><ul class="allergens" aria-label="Allergens and heat"><li>fish</li><li class="hot">heat</li></ul></div>
+      
+    </li>
+    </ul>
+  </section>
+  <section class="menu-group" data-kind="shrimp">
+    <h2><span class="gk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>Shrimp <span class="gc">9</span></h2>
+    <ul class="menu-list">
+    <li class="menu-item" data-dish data-id="blackened-cajun-shrimp" data-name="Blackened Cajun Shrimp" data-kind="shrimp" data-al="shellfish" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>
+      <div class="mt"><h3>Blackened Cajun Shrimp</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="honey-chipotle-shrimp" data-name="Honey Chipotle Shrimp" data-kind="shrimp" data-al="shellfish" data-spicy="1" data-board="1">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>
+      <div class="mt"><h3>Honey Chipotle Shrimp</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li><li class="hot">heat</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="honey-walnut-shrimp" data-name="Honey Walnut Shrimp" data-kind="shrimp" data-al="shellfish,tree nuts" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>
+      <div class="mt"><h3>Honey Walnut Shrimp</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li><li>tree nuts</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="lemon-butter-shrimp" data-name="Lemon Butter Shrimp" data-kind="shrimp" data-al="shellfish,dairy" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>
+      <div class="mt"><h3>Lemon Butter Shrimp</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li><li>dairy</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="shrimp-fried-rice" data-name="Shrimp Fried Rice" data-kind="shrimp" data-al="shellfish,soy" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>
+      <div class="mt"><h3>Shrimp Fried Rice</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li><li>soy</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="shrimp-scampi" data-name="Shrimp Scampi" data-kind="shrimp" data-al="shellfish" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>
+      <div class="mt"><h3>Shrimp Scampi</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="spicy-diabla-shrimp" data-name="Spicy Diabla Shrimp" data-kind="shrimp" data-al="shellfish" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>
+      <div class="mt"><h3>Spicy Diabla Shrimp</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="spicy-korean-shrimp" data-name="Spicy Korean Shrimp" data-kind="shrimp" data-al="shellfish,soy" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg></span>
+      <div class="mt"><h3>Spicy Korean Shrimp</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li><li>soy</li><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="whole-shabang-shrimp" data-name="Whole Shabang Shrimp" data-kind="shrimp" data-al="shellfish" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--shrimp);color:var(--on-shrimp)"><svg aria-hidden="true"><use href="#p-triangle"/></svg><img src="./img/dish-6.jpg" width="600" height="450" alt="Whole Shabang Shrimp, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true"></span>
+      <div class="mt"><h3>Whole Shabang Shrimp</h3><ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    </ul>
+  </section>
+  <section class="menu-group" data-kind="pasta">
+    <h2><span class="gk" style="background:var(--pasta);color:var(--on-pasta)"><svg aria-hidden="true"><use href="#p-ribbon"/></svg></span>Pasta <span class="gc">7</span></h2>
+    <ul class="menu-list">
+    <li class="menu-item" data-dish data-id="chicken-parm-pasta" data-name="Chicken Parm Pasta" data-kind="pasta" data-al="wheat,dairy" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--pasta);color:var(--on-pasta)"><svg aria-hidden="true"><use href="#p-ribbon"/></svg></span>
+      <div class="mt"><h3>Chicken Parm Pasta</h3><ul class="allergens" aria-label="Allergens and heat"><li>wheat</li><li>dairy</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="chipotle-chicken-pasta" data-name="Chipotle Chicken Pasta" data-kind="pasta" data-al="wheat" data-spicy="1" data-board="1">
+      <span class="mk" style="background:var(--pasta);color:var(--on-pasta)"><svg aria-hidden="true"><use href="#p-ribbon"/></svg><img src="./img/dish-2.jpg" width="600" height="450" alt="Chipotle Chicken Pasta, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true"></span>
+      <div class="mt"><h3>Chipotle Chicken Pasta</h3><ul class="allergens" aria-label="Allergens and heat"><li>wheat</li><li class="hot">heat</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    <li class="menu-item" data-dish data-id="lemon-cream-chicken-pasta" data-name="Lemon Cream Chicken Pasta" data-kind="pasta" data-al="wheat,dairy" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--pasta);color:var(--on-pasta)"><svg aria-hidden="true"><use href="#p-ribbon"/></svg></span>
+      <div class="mt"><h3>Lemon Cream Chicken Pasta</h3><ul class="allergens" aria-label="Allergens and heat"><li>wheat</li><li>dairy</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="philly-cheesesteak-mac" data-name="Philly Cheesesteak Mac" data-kind="pasta" data-al="wheat,dairy" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--pasta);color:var(--on-pasta)"><svg aria-hidden="true"><use href="#p-ribbon"/></svg></span>
+      <div class="mt"><h3>Philly Cheesesteak Mac</h3><ul class="allergens" aria-label="Allergens and heat"><li>wheat</li><li>dairy</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="poblano-cream-chicken-pasta" data-name="Poblano Cream Chicken Pasta" data-kind="pasta" data-al="wheat,dairy" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--pasta);color:var(--on-pasta)"><svg aria-hidden="true"><use href="#p-ribbon"/></svg></span>
+      <div class="mt"><h3>Poblano Cream Chicken Pasta</h3><ul class="allergens" aria-label="Allergens and heat"><li>wheat</li><li>dairy</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="spicy-beef-pasta" data-name="Spicy Beef Pasta" data-kind="pasta" data-al="wheat" data-spicy="1" data-board="0">
+      <span class="mk" style="background:var(--pasta);color:var(--on-pasta)"><svg aria-hidden="true"><use href="#p-ribbon"/></svg></span>
+      <div class="mt"><h3>Spicy Beef Pasta</h3><ul class="allergens" aria-label="Allergens and heat"><li>wheat</li><li class="hot">heat</li></ul></div>
+      
+    </li>
+    <li class="menu-item" data-dish data-id="tuscan-chicken-pasta" data-name="Tuscan Chicken Pasta" data-kind="pasta" data-al="wheat" data-spicy="0" data-board="0">
+      <span class="mk" style="background:var(--pasta);color:var(--on-pasta)"><svg aria-hidden="true"><use href="#p-ribbon"/></svg></span>
+      <div class="mt"><h3>Tuscan Chicken Pasta</h3><ul class="allergens" aria-label="Allergens and heat"><li>wheat</li></ul></div>
+      
+    </li>
+    </ul>
+  </section>
+  <section class="menu-group" data-kind="breakfast">
+    <h2><span class="gk" style="background:var(--breakfast);color:var(--on-breakfast)"><svg aria-hidden="true"><use href="#p-egg"/></svg></span>Breakfast <span class="gc">1</span></h2>
+    <ul class="menu-list">
+    <li class="menu-item" data-dish data-id="classic-breakfast-skillet" data-name="Classic Breakfast Skillet" data-kind="breakfast" data-al="egg" data-spicy="0" data-board="1">
+      <span class="mk" style="background:var(--breakfast);color:var(--on-breakfast)"><svg aria-hidden="true"><use href="#p-egg"/></svg><img src="./img/dish-8.jpg" width="600" height="450" alt="Classic Breakfast Skillet, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true"></span>
+      <div class="mt"><h3>Classic Breakfast Skillet</h3><ul class="allergens" aria-label="Allergens and heat"><li>egg</li></ul></div>
+      <a class="on-board" href="./index.html">On this week's board</a>
+    </li>
+    </ul>
+  </section>
+  <p class="menu-empty" hidden>No dish fits. Clear a filter or shorten the search.</p>
+  <section class="prose">
+    <h2>About the marks</h2>
+    <p>Allergen marks come from the dish names only (shrimp is shellfish, pasta is wheat, Parm and cream are dairy, teriyaki and miso are soy). Fina's full allergen lists, calories and macros print here when she confirms them. "Heat" marks a dish with a chili word in its name.</p>
+    <p><a class="btn btn-ink" href="./index.html">Back to the board</a></p>
+  </section>
+</main>
+<footer class="foot">
+  <div>
+    <p class="sample-line">Prices are a sample until Fina confirms hers.</p>
+    <p>Fina's Meal Kitchen, Downey, California. American fusion, something for everyone.</p>
+    <p>Preview site. Fina's is not taking payments or storing information yet.</p>
+  </div>
+  <div class="hours">
+    <strong>Sundays</strong>
+    <span>Downey pickup, address and hours coming from Fina.</span>
+    <span>Pickup window Sunday 5:30 to 8:30 PM, delivery Sunday 5:30 to 9:00 PM (sample)</span>
+    <span>Board closes Thursday 11:59 PM, new board every Friday</span>
+  </div>
+  <nav aria-label="Footer">
+    <a href="./index.html">Board</a>
+    <a href="./menu.html">Menu</a>
+    <a href="./how.html">How it works</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+    <a href="./checkout.html">Checkout</a>
+    <a href="./card.html">Print the Sunday card</a>
+  </nav>
+</footer>
+<script src="./app.js"></script>
+</body>
+</html>

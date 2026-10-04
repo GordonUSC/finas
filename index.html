@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<!-- STYLE: Lance Wyman and Otl Aicher, The Market Board (pictogram board with a receipt tape and a price thermometer) | WHY: every dish visible at once and the price falling in view wins the first minute on a phone, which is where meal prep is ordered on Thursday night | ALT: Paula Scher and Emory Douglas, The Kitchen Pass (dark horizontal ticket rail), a better poster and a slower order form -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fina&#x27;s, the Sunday meal board</title>
+<meta name="description" content="Fina&#x27;s Meal Kitchen in Downey, California: pick a size, add dishes, watch the price fall as the bag grows. Order by Thursday 11:59 PM for Sunday pickup or delivery in LA and OC.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&amp;display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body data-page="board">
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="p-circle" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></symbol>
+  <symbol id="p-square" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34"/></symbol>
+  <symbol id="p-triangle" viewBox="0 0 48 48"><path d="M24 6 44 42H4z"/></symbol>
+  <symbol id="p-wave" viewBox="0 0 48 48"><path d="M2 18c6 0 6-8 12-8s6 8 12 8 6-8 12-8 6 8 10 8v8c-4 0-4-8-10-8s-6 8-12 8-6-8-12-8-6 8-12 8zm0 14c6 0 6-8 12-8s6 8 12 8 6-8 12-8 6 8 10 8v8c-4 0-4-8-10-8s-6 8-12 8-6-8-12-8-6 8-12 8z"/></symbol>
+  <symbol id="p-ribbon" viewBox="0 0 48 48"><path d="M6 8h36v8H6zm0 12h36v8H6zm0 12h36v8H6z"/></symbol>
+  <symbol id="p-egg" viewBox="0 0 48 48"><path d="M24 4c8 0 16 14 16 26a16 16 0 0 1-32 0C8 18 16 4 24 4z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M3 10h18v4H3z"/></symbol>
+</svg>
+<p id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+<header class="masthead">
+  <a class="mark" href="./index.html">Fina's</a>
+  <nav aria-label="Pages">
+    <a href="./index.html" aria-current="page">Board</a>
+    <a href="./menu.html">Menu</a>
+    <a href="./how.html">How it works</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="hero" aria-label="This week">
+    <div class="hero-name">
+      <h1>Fina's</h1>
+      <p>Meal Kitchen, <span class="long">Downey, California</span><span class="short">Downey</span>. <em><span class="long">Pick a size, add dishes, watch the price fall. </span>Come hungry Sunday.</em></p>
+    </div>
+    <div class="hero-facts">
+      <div class="fact when">
+        <span class="k">Next Sunday</span>
+        <span class="v"><span data-sunday>The Sunday after the Thursday close</span></span>
+        <span class="s">Downey pickup, address and hours coming from Fina. Delivery across LA and OC by ZIP.</span>
+      </div>
+      <div class="fact closes">
+        <span class="k">Board closes Thursday 11:59 PM Pacific</span>
+        <span class="v js-only" data-countdown>counting</span>
+        <span class="s">Order any day. New board every Friday.</span>
+      </div>
+      <div class="fact zip">
+        <form class="zip-form js-only" aria-label="Delivery check">
+          <label class="visually-hidden" for="zip">Your ZIP code</label>
+          <input class="field" id="zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="ZIP" autocomplete="postal-code">
+          <button type="submit" class="btn btn-ink">Delivery fee</button>
+        </form>
+        <p class="zip-answer" role="status"></p>
+        <p class="zip-table desk">Sunday delivery, sample fees: $4 around Downey, Bell Gardens and Long Beach (ZIPs starting 902 and 908), $7 across the rest of Los Angeles County, $9 in Orange County, free at 15 meals. Everywhere else is pickup only.</p>
+        <details class="fees phone">
+          <summary>How fees work</summary>
+          <p class="zip-table">Sunday delivery, sample fees: $4 around Downey, Bell Gardens and Long Beach (ZIPs starting 902 and 908), $7 across the rest of Los Angeles County, $9 in Orange County, free at 15 meals. Everywhere else is pickup only.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <p class="sample"><strong class="lead">Sample prices.</strong> Prices are a sample until Fina confirms hers. <span class="more">The dishes are Fina's real menu.</span></p>
+  <noscript><p class="notice">Ordering on this board needs JavaScript. The menu, prices and hours below read without it.</p></noscript>
+
+  <div class="board">
+    <section class="board-main" aria-label="The board">
+      <div class="board-head">
+        <h2>This week's board</h2>
+        <div class="switch js-only">
+          <span class="k" id="size-k">Protein size</span>
+          <div class="seg" role="group" aria-labelledby="size-k">
+            <button type="button" data-size="4" aria-pressed="true">4 oz</button>
+            <button type="button" data-size="8" aria-pressed="false">8 oz</button>
+          </div>
+        </div>
+        <div class="switch js-only">
+          <span class="k" id="style-k">Style</span>
+          <div class="seg" role="group" aria-labelledby="style-k">
+            <button type="button" data-style="classic" aria-pressed="true">Classic</button>
+            <button type="button" data-style="lean" aria-pressed="false">Lean</button>
+          </div>
+        </div>
+        <p class="price-line">Classic 4 oz: <strong>$13.95</strong> a meal. Five or more $13.45, ten $12.95, fifteen $12.45 with free delivery.</p>
+        <div class="price-grid" role="table" aria-label="Sample price per meal by style and size">
+    <div class="h">Per meal</div><div class="h">4 oz</div><div class="h">8 oz</div>
+    <div class="h">Classic</div><div class="v" data-style="classic" data-size="4" data-active="true">$13.95</div><div class="v" data-style="classic" data-size="8" data-active="false">$16.95</div><div class="h">Lean</div><div class="v" data-style="lean" data-size="4" data-active="false">$14.45</div><div class="v" data-style="lean" data-size="8" data-active="false">$17.45</div>
+  </div>
+        <p class="price-line more">Sizes and styles are sample options: Classic is protein with a side and a vegetable, Lean is protein with double vegetables. Fina confirms the real ones.</p>
+      </div>
+
+      <div class="fills js-only" aria-label="Quick fills">
+        <button type="button" class="btn" data-act="bundle" data-bundle="weekday-five">Weekday Five</button>
+        <button type="button" class="btn" data-act="bundle" data-bundle="family-ten">Family Ten</button>
+        <button type="button" class="btn" data-act="repeat">Repeat last order</button>
+        <button type="button" class="btn" data-act="load-usual">Load my usual</button>
+      </div>
+      <details class="plan js-only">
+        <summary>Plan my week by rules</summary>
+        <form class="plan-body">
+          <label class="check"><input type="checkbox" name="no-shellfish"><span>No shellfish</span></label>
+          <label class="check"><input type="checkbox" name="no-fish"><span>No fish</span></label>
+          <label class="check"><input type="checkbox" name="no-dairy"><span>No dairy</span></label>
+          <label class="check"><input type="checkbox" name="no-wheat"><span>No wheat</span></label>
+          <label class="check"><input type="checkbox" name="mild"><span>Mild only, skip the dishes with heat in the name</span></label>
+          <label class="check"><input type="checkbox" name="under-500" disabled><span>Under 500 calories (switches on when Fina's macros arrive)</span></label>
+          <label class="check"><input type="checkbox" name="high-protein" disabled><span>Highest protein first (switches on when Fina's macros arrive)</span></label>
+          <div class="row">
+            <label class="lbl" for="plan-count" style="margin:0">Meals</label>
+            <select class="field" id="plan-count" name="plan-count"><option value="5">5</option><option value="10">10</option><option value="15">15</option></select>
+            <button type="submit" class="btn btn-ink">Fill my bag</button>
+          </div>
+          <p class="plan-note" role="status"></p>
+        </form>
+      </details>
+
+      <p class="caption before">Illustrative dish photos.</p>
+      <div class="tiles">
+        <div class="media-tile">
+          <div class="frame">
+            <svg class="pict-big" aria-hidden="true"><use href="#p-circle"/></svg>
+            <video poster="./img/board-hero.jpg" width="1280" height="648" muted loop playsinline autoplay preload="metadata" aria-label="Meal containers being filled at the kitchen pass, illustrative">
+              <source src="./img/board-hero.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="cap">The pass on a Sunday, illustrative clip.</p>
+          <dl class="rhythm" aria-label="The week">
+            <div><dt>Friday</dt><dd>New board, twelve dishes</dd></div>
+            <div><dt>Thursday 11:59 PM</dt><dd>Board closes</dd></div>
+            <div><dt>Sunday</dt><dd>Pickup in Downey, delivery across LA and OC</dd></div>
+          </dl>
+        </div>
+        
+<article class="tile" data-dish data-id="cowboy-chicken" data-name="Cowboy Chicken" data-kind="chicken" data-al="" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--chicken);color:var(--on-chicken)">
+    <span class="num">01</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-circle"/></svg>
+    <span class="kind">Chicken</span>
+  </div>
+  <div class="tile-img" style="background:var(--chicken);color:var(--on-chicken)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-circle"/></svg>
+    <img src="./img/dish-1.jpg" width="600" height="450" alt="Cowboy Chicken, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true">
+  </div>
+  <div class="tile-body">
+    <h3>Cowboy Chicken</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Cowboy Chicken"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Cowboy Chicken in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Cowboy Chicken"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="chipotle-chicken-pasta" data-name="Chipotle Chicken Pasta" data-kind="pasta" data-al="wheat" data-spicy="1" data-qty="0">
+  <div class="tile-head" style="background:var(--pasta);color:var(--on-pasta)">
+    <span class="num">02</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-ribbon"/></svg>
+    <span class="kind">Pasta</span>
+  </div>
+  <div class="tile-img" style="background:var(--pasta);color:var(--on-pasta)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-ribbon"/></svg>
+    <img src="./img/dish-2.jpg" width="600" height="450" alt="Chipotle Chicken Pasta, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true">
+  </div>
+  <div class="tile-body">
+    <h3>Chipotle Chicken Pasta</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li>wheat</li><li class="hot">heat</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Chipotle Chicken Pasta"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Chipotle Chicken Pasta in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Chipotle Chicken Pasta"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="hawaiian-jalapeno-beef" data-name="Hawaiian Jalapeno Beef" data-kind="beef" data-al="" data-spicy="1" data-qty="0">
+  <div class="tile-head" style="background:var(--beef);color:var(--on-beef)">
+    <span class="num">03</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-square"/></svg>
+    <span class="kind">Beef</span>
+  </div>
+  <div class="tile-img" style="background:var(--beef);color:var(--on-beef)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-square"/></svg>
+    <img src="./img/dish-3.jpg" width="600" height="450" alt="Hawaiian Jalapeno Beef, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true">
+  </div>
+  <div class="tile-body">
+    <h3>Hawaiian Jalapeno Beef</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li class="hot">heat</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Hawaiian Jalapeno Beef"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Hawaiian Jalapeno Beef in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Hawaiian Jalapeno Beef"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="black-garlic-citrus-steak" data-name="Black Garlic Citrus Steak" data-kind="beef" data-al="" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--beef);color:var(--on-beef)">
+    <span class="num">04</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-square"/></svg>
+    <span class="kind">Beef</span>
+  </div>
+  <div class="tile-img" style="background:var(--beef);color:var(--on-beef)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-square"/></svg>
+    <img src="./img/dish-4.jpg" width="600" height="450" alt="Black Garlic Citrus Steak, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true">
+  </div>
+  <div class="tile-body">
+    <h3>Black Garlic Citrus Steak</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Black Garlic Citrus Steak"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Black Garlic Citrus Steak in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Black Garlic Citrus Steak"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="chimichurri-fish" data-name="Chimichurri Fish" data-kind="fish" data-al="fish" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--fish);color:var(--on-fish)">
+    <span class="num">05</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-wave"/></svg>
+    <span class="kind">Fish</span>
+  </div>
+  <div class="tile-img" style="background:var(--fish);color:var(--on-fish)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-wave"/></svg>
+    <img src="./img/dish-5.jpg" width="600" height="450" alt="Chimichurri Fish, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true">
+  </div>
+  <div class="tile-body">
+    <h3>Chimichurri Fish</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li>fish</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Chimichurri Fish"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Chimichurri Fish in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Chimichurri Fish"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="whole-shabang-shrimp" data-name="Whole Shabang Shrimp" data-kind="shrimp" data-al="shellfish" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--shrimp);color:var(--on-shrimp)">
+    <span class="num">06</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-triangle"/></svg>
+    <span class="kind">Shrimp</span>
+  </div>
+  <div class="tile-img" style="background:var(--shrimp);color:var(--on-shrimp)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-triangle"/></svg>
+    <img src="./img/dish-6.jpg" width="600" height="450" alt="Whole Shabang Shrimp, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true">
+  </div>
+  <div class="tile-body">
+    <h3>Whole Shabang Shrimp</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Whole Shabang Shrimp"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Whole Shabang Shrimp in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Whole Shabang Shrimp"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="classic-breakfast-skillet" data-name="Classic Breakfast Skillet" data-kind="breakfast" data-al="egg" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--breakfast);color:var(--on-breakfast)">
+    <span class="num">07</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-egg"/></svg>
+    <span class="kind">Breakfast</span>
+  </div>
+  <div class="tile-img" style="background:var(--breakfast);color:var(--on-breakfast)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-egg"/></svg>
+    <img src="./img/dish-8.jpg" width="600" height="450" alt="Classic Breakfast Skillet, illustrative" loading="lazy" decoding="async" onerror="this.hidden=true">
+  </div>
+  <div class="tile-body">
+    <h3>Classic Breakfast Skillet</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li>egg</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Classic Breakfast Skillet"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Classic Breakfast Skillet in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Classic Breakfast Skillet"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="greek-chicken" data-name="Greek Chicken" data-kind="chicken" data-al="" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--chicken);color:var(--on-chicken)">
+    <span class="num">08</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-circle"/></svg>
+    <span class="kind">Chicken</span>
+  </div>
+  <div class="tile-img" style="background:var(--chicken);color:var(--on-chicken)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-circle"/></svg>
+    
+  </div>
+  <div class="tile-body">
+    <h3>Greek Chicken</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li class="none">No allergen in the name</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Greek Chicken"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Greek Chicken in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Greek Chicken"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="honey-teriyaki-chicken" data-name="Honey Teriyaki Chicken" data-kind="chicken" data-al="soy" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--chicken);color:var(--on-chicken)">
+    <span class="num">09</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-circle"/></svg>
+    <span class="kind">Chicken</span>
+  </div>
+  <div class="tile-img" style="background:var(--chicken);color:var(--on-chicken)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-circle"/></svg>
+    
+  </div>
+  <div class="tile-body">
+    <h3>Honey Teriyaki Chicken</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li>soy</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Honey Teriyaki Chicken"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Honey Teriyaki Chicken in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Honey Teriyaki Chicken"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="korean-beef" data-name="Korean Beef" data-kind="beef" data-al="soy" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--beef);color:var(--on-beef)">
+    <span class="num">10</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-square"/></svg>
+    <span class="kind">Beef</span>
+  </div>
+  <div class="tile-img" style="background:var(--beef);color:var(--on-beef)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-square"/></svg>
+    
+  </div>
+  <div class="tile-body">
+    <h3>Korean Beef</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li>soy</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Korean Beef"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Korean Beef in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Korean Beef"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="lemon-butter-fish" data-name="Lemon Butter Fish" data-kind="fish" data-al="fish,dairy" data-spicy="0" data-qty="0">
+  <div class="tile-head" style="background:var(--fish);color:var(--on-fish)">
+    <span class="num">11</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-wave"/></svg>
+    <span class="kind">Fish</span>
+  </div>
+  <div class="tile-img" style="background:var(--fish);color:var(--on-fish)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-wave"/></svg>
+    
+  </div>
+  <div class="tile-body">
+    <h3>Lemon Butter Fish</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li>fish</li><li>dairy</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Lemon Butter Fish"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Lemon Butter Fish in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Lemon Butter Fish"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+<article class="tile" data-dish data-id="honey-chipotle-shrimp" data-name="Honey Chipotle Shrimp" data-kind="shrimp" data-al="shellfish" data-spicy="1" data-qty="0">
+  <div class="tile-head" style="background:var(--shrimp);color:var(--on-shrimp)">
+    <span class="num">12</span>
+    <svg class="pict" aria-hidden="true"><use href="#p-triangle"/></svg>
+    <span class="kind">Shrimp</span>
+  </div>
+  <div class="tile-img" style="background:var(--shrimp);color:var(--on-shrimp)">
+    <svg class="pict-big" aria-hidden="true"><use href="#p-triangle"/></svg>
+    
+  </div>
+  <div class="tile-body">
+    <h3>Honey Chipotle Shrimp</h3>
+    <ul class="allergens" aria-label="Allergens and heat"><li>shellfish</li><li class="hot">heat</li></ul>
+  </div>
+  <div class="ctl">
+    <button type="button" class="minus js-only" aria-label="Remove one Honey Chipotle Shrimp"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty js-only" aria-label="Honey Chipotle Shrimp in bag">0</output>
+    <button type="button" class="plus js-only" aria-label="Add Honey Chipotle Shrimp"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+    <span class="price" data-price>$13.95</span>
+  </div>
+</article>
+      </div>
+      <div class="tiles-foot"></div>
+      <p class="caption after">Twelve dishes from Fina's menu of 57, one number each. Calories and macros are coming from Fina and will print on each tile. Allergen marks come from the dish names; full lists come with the confirmed menu. <a href="./menu.html">All 57 dishes on the menu page</a>, grouped by protein with search and filters.</p>
+
+      <section class="extras" aria-label="Sauces">
+        <h2>Sauces</h2>
+        <p class="rule-note">Two sauces free with every five meals. Extra sauces 75 cents each. Sample sauces until Fina confirms hers.</p>
+        <div class="sauces">
+<div class="sauce" data-id="chimichurri" data-name="Chimichurri" data-qty="0">
+  <p class="name">Chimichurri</p>
+  <p class="meta">No listed allergens. Two free with every five meals, then 75 cents. Sample sauces.</p>
+  <div class="ctl js-only">
+    <button type="button" class="minus" aria-label="Remove one Chimichurri"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty" aria-label="Chimichurri in bag">0</output>
+    <button type="button" class="plus" aria-label="Add Chimichurri"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+  </div>
+</div>
+<div class="sauce" data-id="garlic-yogurt" data-name="Garlic Yogurt" data-qty="0">
+  <p class="name">Garlic Yogurt</p>
+  <p class="meta">Contains dairy. Two free with every five meals, then 75 cents. Sample sauces.</p>
+  <div class="ctl js-only">
+    <button type="button" class="minus" aria-label="Remove one Garlic Yogurt"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty" aria-label="Garlic Yogurt in bag">0</output>
+    <button type="button" class="plus" aria-label="Add Garlic Yogurt"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+  </div>
+</div>
+<div class="sauce" data-id="chipotle-crema" data-name="Chipotle Crema" data-qty="0">
+  <p class="name">Chipotle Crema</p>
+  <p class="meta">Contains dairy. Two free with every five meals, then 75 cents. Sample sauces.</p>
+  <div class="ctl js-only">
+    <button type="button" class="minus" aria-label="Remove one Chipotle Crema"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty" aria-label="Chipotle Crema in bag">0</output>
+    <button type="button" class="plus" aria-label="Add Chipotle Crema"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+  </div>
+</div>
+<div class="sauce" data-id="ginger-soy" data-name="Ginger Soy" data-qty="0">
+  <p class="name">Ginger Soy</p>
+  <p class="meta">Contains soy, wheat. Two free with every five meals, then 75 cents. Sample sauces.</p>
+  <div class="ctl js-only">
+    <button type="button" class="minus" aria-label="Remove one Ginger Soy"><svg aria-hidden="true"><use href="#i-minus"/></svg></button>
+    <output class="qty" aria-label="Ginger Soy in bag">0</output>
+    <button type="button" class="plus" aria-label="Add Ginger Soy"><svg aria-hidden="true"><use href="#i-plus"/></svg></button>
+  </div>
+</div></div>
+      </section>
+    </section>
+    <div class="tape-col" id="tape-col">
+<aside class="tape" aria-label="Your bag">
+  <div class="tape-inner">
+    <h2>Your bag</h2>
+    <p class="sunday">For <strong data-sunday>the Sunday after the Thursday close</strong></p>
+    <ul class="lines"><li class="empty">Nothing on the tape yet. Add a dish and it prints here.</li></ul>
+    <div class="ladder">
+      <span class="k">Price ladder (sample)</span>
+      <div class="therm" role="img" aria-label="Meals toward the 15 meal price break">
+        <div class="fill"></div><i class="mark" data-at="5"></i><i class="mark" data-at="10"></i>
+      </div>
+      <div class="therm-labels"><span>5 meals</span><span>10 meals</span><span>15 meals</span></div>
+      <p class="next">Every meal is <strong>$13.95</strong>. At 5 meals each one drops 50 cents, at 10 a dollar, at 15 a dollar fifty and delivery is free.</p>
+      <p class="saved">No ladder savings yet</p>
+    </div>
+    <div class="totals">
+      <div><span data-count>0 meals</span><span data-sub>$0.00</span></div>
+      <div class="delivery"><span>Sunday delivery <small>(free at 15 meals)</small></span><span data-fee>By ZIP</span></div>
+      <div class="total"><span>Total</span><span data-total>$0.00</span></div>
+    </div>
+      <div class="tape-actions js-only">
+        <a class="btn btn-ink" href="./checkout.html">Checkout preview</a>
+        <div class="pair">
+          <button type="button" class="btn" data-act="repeat">Repeat last order</button>
+          <button type="button" class="btn" data-act="load-usual">Load my usual</button>
+        </div>
+        <div class="pair">
+          <button type="button" class="btn" data-act="save-usual">Save my usual</button>
+          <button type="button" class="btn" data-act="clear">Clear bag</button>
+        </div>
+        <p class="tape-msg" role="status"></p>
+      </div>
+  </div>
+</aside></div>
+  </div>
+</main>
+
+<div class="tally js-only" aria-label="Bag total">
+  <div class="sum"><span class="amt">$0.00</span><span class="meals">0 meals</span></div>
+  <button type="button" data-act="toggle-tape" aria-expanded="false" aria-controls="tape-col">Bag</button>
+</div>
+<footer class="foot">
+  <div>
+    <p class="sample-line">Prices are a sample until Fina confirms hers.</p>
+    <p>Fina's Meal Kitchen, Downey, California. American fusion, something for everyone.</p>
+    <p>Preview site. Fina's is not taking payments or storing information yet.</p>
+  </div>
+  <div class="hours">
+    <strong>Sundays</strong>
+    <span>Downey pickup, address and hours coming from Fina.</span>
+    <span>Pickup window Sunday 5:30 to 8:30 PM, delivery Sunday 5:30 to 9:00 PM (sample)</span>
+    <span>Board closes Thursday 11:59 PM, new board every Friday</span>
+  </div>
+  <nav aria-label="Footer">
+    <a href="./index.html">Board</a>
+    <a href="./menu.html">Menu</a>
+    <a href="./how.html">How it works</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+    <a href="./checkout.html">Checkout</a>
+    <a href="./card.html">Print the Sunday card</a>
+  </nav>
+</footer>
+<script src="./app.js"></script>
+</body>
+</html>
