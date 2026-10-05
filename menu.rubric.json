@@ -1,12 +1,12 @@
 {
   "page": "menu.html",
-  "written_by": "Darby worker e4475a, 2026-10-04, before Gordon sees it",
+  "written_by": "Darby, award-level creative and UX pass 2026-10-04 evening (earlier version by worker e4475a)",
   "person_made_it": "The full list of 57 dishes grouped by protein with search and filters, written like a board someone chalked by hand, not a database dump.",
   "emcee_who_is_speaking": "The same kitchen host, listing what is cooked, naming allergens only from the dish names and saying so.",
   "what_time_of_day_is_this_room": "Sunday afternoon, deciding next week; the search box is the first control.",
-  "did_the_click_pay_me": "Yes: typing filters the 57 live and each row links back to the board to add it.",
+  "did_the_click_pay_me": "Yes: a sticky protein bar with counts jumps to Chicken 26, Beef 7, Fish 7, Shrimp 9, Pasta 7 or Breakfast 1, and every one of the 57 rows now shows its dish as a photo instead of a bare pictogram.",
   "works_for_the_recipient": "Fina can add or strike dishes in one list; eaters find pork-free or no-shellfish in one tap.",
   "taught_me_something": "Fifty-seven dishes with no macros is a menu, not a nutrition page; honesty about missing numbers beats invented ones.",
-  "told_me_the_truth": "Macros are absent rather than invented; allergen marks say they come from the names.",
-  "weakest": "No photos for 50 of the 57 dishes; the protein color block carries them until Fina sends plates."
+  "told_me_the_truth": "Each photo is labeled illustrative in its alt text; allergen marks still come from dish names only and the page says so.",
+  "weakest": "57 illustrative photos raise appetite but are not Fina's food; when her plates arrive they should replace these one for one. Filters still sit above the jump bar on phone, so the bar is one scroll down."
 }

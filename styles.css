@@ -196,7 +196,6 @@ table.grid td.num, table.grid th.num { text-align: right; }
   .fact .k { font-size: 15px; }
   .fact .v { font-size: 26px; }
   .fact .s { display: none; }
-  .hero-name .long { display: none; }
   .zip-answer:empty { display: none; }
   .zip-table.desk { display: none; }
   .fees { display: block; }
@@ -324,13 +323,13 @@ table.grid td.num, table.grid th.num { text-align: right; }
   .price-line strong { font-size: 18px; }
   .price-line.more { display: none; }
   .fills { padding: 8px 0; }
-  .fills .btn { min-height: 44px; padding: 6px 12px; }
+  .fills .btn { min-height: 44px; padding: 6px 8px; font-size: 15px; }
   .board-main { display: flex; flex-direction: column; }
   .board-main > .board-head { order: 1; }
   .board-main > .tiles { order: 2; }
   .board-main > .tiles-foot { order: 3; }
   .board-main > .caption.before { order: 4; }
-  .board-main > .fills { order: 5; }
+  .board-main > .fills { order: 5; display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
   .board-main > .plan { order: 6; border-top: 0; }
   .board-main > .caption.after { order: 7; }
   .board-main > .extras { order: 8; }
@@ -560,3 +559,72 @@ table.grid td.num, table.grid th.num { text-align: right; }
   .card-dishes .cn { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   a { text-decoration: none; }
 }
+
+/* Hero strip: the week's twelve dishes as a printed contact sheet; each cell jumps to its tile */
+.hero-strip { display: none; list-style: none; margin: 0; padding: 0; }
+@media (min-width: 640px) {
+  .hero-strip { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-top: var(--rule); border-left: var(--rule); margin: 10px 0 8px; max-width: 720px; }
+  .hero-strip li { border-right: var(--rule); border-bottom: var(--rule); }
+  .hero-strip a { display: block; text-decoration: none; }
+  .hero-strip img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .hero-strip .n { display: block; font-weight: 900; font-size: 14px; line-height: 1; padding: 3px 4px; }
+  .hero-strip a:hover img, .hero-strip a:focus-visible img { opacity: 0.8; }
+}
+@media (min-width: 1000px) { .hero-strip { margin: 12px 0 0; } }
+.tile { scroll-margin-top: 12px; }
+.fact .remind { display: inline-block; font-weight: 700; padding: 6px 0 2px; }
+@media (max-width: 639px) { .fact .remind { padding: 0; font-size: 15px; } }
+
+/* How: the week drawn as a ten day line */
+.week { margin: 8px 0 0; max-width: 960px; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); border: var(--rule); }
+.week-days { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; list-style: none; margin: 0; padding: 0; border-bottom: var(--rule); }
+.week-days li { padding: 8px 4px; font-weight: 900; text-align: center; border-right: var(--thin); }
+.week-days li:last-child { border-right: 0; }
+.week-days .thu { background: var(--beef); color: var(--on-beef); }
+.week-days .sun { background: var(--chicken); color: var(--on-chicken); }
+.week-open { grid-column: 1 / 8; grid-row: 2; background: var(--ink); color: var(--board); padding: 10px 8px; font-weight: 700; }
+.week-close { grid-column: 4 / 8; grid-row: 3; text-align: right; padding: 8px 8px 8px 0; font-weight: 700; border-right: 6px solid var(--beef); }
+.week-sun { grid-column: 8 / 11; grid-row: 2 / 4; background: var(--chicken); color: var(--on-chicken); padding: 10px 8px; font-weight: 900; display: flex; align-items: flex-end; }
+.week figcaption { grid-column: 1 / -1; grid-row: 4; padding: 10px 8px; border-top: var(--rule); font-style: italic; }
+.week-remind { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 16px 0 0; max-width: 960px; }
+@media (max-width: 639px) {
+  .week-days li { font-size: 13px; padding: 6px 0; }
+  .week-open, .week-close, .week-sun { font-size: 15px; }
+  .week-close { grid-column: 1 / 8; }
+}
+
+/* FAQ: every question on one screen first */
+.q-index { border-bottom: var(--rule); padding: 0 0 12px; max-width: 70ch; }
+.q-index ol { margin: 0; padding: 0 0 0 28px; columns: 2 300px; column-gap: 32px; }
+.q-index li { padding: 4px 0; break-inside: avoid; font-weight: 700; }
+.q-index a { display: inline-block; padding: 4px 0; }
+.prose h2[id] { scroll-margin-top: 12px; }
+
+/* Contact: what is real today and what is still coming */
+.ledger { display: grid; grid-template-columns: 1fr; border: var(--rule); margin: 20px 0 8px; max-width: 960px; }
+.ledger > div { padding: 14px 16px; }
+.ledger h2 { font-size: 26px; padding-bottom: 6px; }
+.ledger ul { margin: 0; padding-left: 22px; }
+.ledger li { padding: 4px 0; }
+.ledger .coming { background: var(--breakfast); color: var(--on-breakfast); border-top: var(--rule); }
+@media (min-width: 700px) { .ledger { grid-template-columns: 1fr 1fr; } .ledger .coming { border-top: 0; border-left: var(--rule); } }
+
+/* Menu: protein jump bar */
+.jump { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 0; background: var(--board); border-bottom: var(--rule); }
+.jump a { display: flex; align-items: center; gap: 8px; min-height: var(--tap); padding: 4px 14px 4px 0; font-weight: 700; text-decoration: none; }
+.jump a:hover { text-decoration: underline; }
+.jump .gk { display: inline-grid; place-items: center; width: 28px; height: 28px; }
+.jump .gk svg { width: 16px; height: 16px; fill: currentColor; }
+.jump .gc { font-weight: 400; }
+.menu-group { scroll-margin-top: 56px; }
+@media (max-width: 639px) { .jump a { padding-right: 10px; font-size: 15px; gap: 6px; } .menu-group { scroll-margin-top: 100px; } }
+
+/* Checkout confirmation photo */
+.confirm-img { margin: 0 0 16px; max-width: 560px; border: var(--rule); }
+.confirm-img figcaption { padding: 6px 10px; font-style: italic; border-top: var(--rule); font-size: 15px; }
+.q-index + .prose > h2:first-child { border-top: 0; margin-top: 0; }
+.confirm dl { margin: 0; }
+.confirm dl div { display: grid; grid-template-columns: minmax(90px, 1fr) 3fr; gap: 0 16px; padding: 10px 0; border-bottom: var(--thin); }
+.confirm dt { font-weight: 700; }
+.confirm dd { margin: 0; }
+.confirm-img { max-width: 440px; }

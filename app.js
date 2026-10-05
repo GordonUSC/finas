@@ -205,7 +205,7 @@
     if (c.sc) {
       html += '<li data-key="sauce-total" class="free"><span class="q"></span><span class="n">' + Math.min(c.sc, c.freeS) + ' of ' + c.freeS + ' free sauces used' + (c.paidS ? ', ' + c.paidS + ' extra at ' + money(SAUCE_PRICE) : '') + '</span><span class="a">' + (c.paidS ? money(c.sauceTotal) : 'Free') + '</span></li>';
     }
-    if (!html) html = '<li class="empty">Nothing on the tape yet. Add a dish and it prints here.</li>';
+    if (!html) html = '<li class="empty"><strong>The tape is blank.</strong> Tap + on any dish and it prints here. Five meals is where every price first drops.</li>';
     var prev = {};
     $$('li', lines).forEach(function (li) { prev[li.getAttribute('data-key')] = li.textContent; });
     lines.innerHTML = html;

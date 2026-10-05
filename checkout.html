@@ -7,6 +7,19 @@
 <title>Checkout preview, Fina&#x27;s</title>
 <meta name="description" content="Pickup or delivery, Sunday windows, calendar file and a preview order. Fina&#x27;s is not taking payments yet.">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F4EFE4">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fina's Meal Kitchen">
+<meta property="og:title" content="Checkout preview, Fina&#x27;s">
+<meta property="og:description" content="Pickup or delivery, Sunday windows, calendar file and a preview order. Fina&#x27;s is not taking payments yet.">
+<meta property="og:url" content="https://gordonusc.github.io/finas/checkout.html">
+<meta property="og:image" content="https://gordonusc.github.io/finas/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fina's Sunday meal board: twelve dishes a week, order by Thursday, Sunday in Downey. Illustrative photo.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&amp;display=swap">
@@ -114,6 +127,7 @@
       </form>
 
       <section id="confirm" class="confirm" hidden aria-live="polite">
+        <figure class="confirm-img"><img src="./img/sunday-bag.jpg" width="1200" height="900" alt="A paper bag packed with meal containers, illustrative" loading="lazy" decoding="async" onerror="this.parentNode.hidden=true"><figcaption>Your Sunday, illustrative photo.</figcaption></figure>
         <h2>Preview order recorded on this device</h2>
         <p class="num" data-order-number></p>
         <dl>
@@ -123,6 +137,7 @@
           <div><dt>Status</dt><dd data-order-status></dd></div>
         </dl>
         <p style="padding:16px 0 8px"><a class="btn" data-ics-confirm href="#" download="finas-sunday.ics">Add Sunday to my calendar (.ics)</a></p>
+        <p style="padding:8px 0"><a class="btn" href="./finas-thursday-reminder.ics" download>Remind me every Thursday (.ics)</a></p>
         <p style="padding:8px 0"><button type="button" class="btn" data-act="cancel-order">Cancel before Thursday</button></p>
         <p><a href="./index.html">Back to the board</a></p>
       </section>
@@ -137,7 +152,7 @@
   <div class="tape-inner">
     <h2>Your bag</h2>
     <p class="sunday">For <strong data-sunday>the Sunday after the Thursday close</strong></p>
-    <ul class="lines"><li class="empty">Nothing on the tape yet. Add a dish and it prints here.</li></ul>
+    <ul class="lines"><li class="empty"><strong>The tape is blank.</strong> Tap + on any dish and it prints here. Five meals is where every price first drops.</li></ul>
     <div class="ladder">
       <span class="k">Price ladder (sample)</span>
       <div class="therm" role="img" aria-label="Meals toward the 15 meal price break">
