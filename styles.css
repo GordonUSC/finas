@@ -628,3 +628,12 @@ table.grid td.num, table.grid th.num { text-align: right; }
 .confirm dt { font-weight: 700; }
 .confirm dd { margin: 0; }
 .confirm-img { max-width: 440px; }
+
+/* Share kit: two graphics, each with its caption and a download */
+.kits { display: grid; grid-template-columns: 1fr; gap: 0; border-top: var(--rule); margin-top: 8px; }
+.kit { margin: 0; display: grid; grid-template-columns: 1fr; gap: 12px 24px; padding: 20px 0; border-bottom: var(--rule); }
+.kit img { width: 100%; max-width: 360px; border: var(--rule); }
+.kit h2 { font-size: clamp(26px, 3.2vw, 36px); padding-bottom: 6px; }
+.kit p { padding: 4px 0; max-width: 52ch; }
+.kit-cap { border-left: 6px solid var(--chicken); padding-left: 12px !important; margin: 8px 0; }
+@media (min-width: 760px) { .kit { grid-template-columns: 360px minmax(0, 1fr); align-items: start; } }
