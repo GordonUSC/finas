@@ -637,3 +637,25 @@ table.grid td.num, table.grid th.num { text-align: right; }
 .kit p { padding: 4px 0; max-width: 52ch; }
 .kit-cap { border-left: 6px solid var(--chicken); padding-left: 12px !important; margin: 8px 0; }
 @media (min-width: 760px) { .kit { grid-template-columns: 360px minmax(0, 1fr); align-items: start; } }
+
+/* F3 2026-10-04 (Astra review): desktop food leads. Compact masthead and controls, two wide tile columns, clip after the dishes, quieter empty bag. Phone layout untouched. */
+@media (min-width: 1000px) {
+  .hero { max-height: 210px; }
+  .hero-name { padding: 6px 24px 6px 0; }
+  .hero-name h1 { font-size: 64px; }
+  .hero-name p { font-size: 17px; padding-top: 4px; }
+  .hero-strip { margin-top: 8px; max-width: 520px; }
+  .fact { padding: 6px 0; }
+  .fact .v { font-size: 22px; }
+  .board { grid-template-columns: minmax(0, 1fr) 320px; }
+  .board-head { padding: 8px 0; gap: 8px 20px; }
+  .board-head h2 { font-size: 30px; }
+  .price-line { font-size: 16px; }
+  .price-line strong { font-size: 19px; }
+  .fills { padding: 6px 0; }
+  .fills .btn { min-height: 40px; padding-top: 6px; padding-bottom: 6px; }
+  .caption { padding: 4px 0; }
+  .tiles { margin-top: 6px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .media-tile { order: 99; }
+}
+@media (min-width: 1600px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

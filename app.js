@@ -292,10 +292,9 @@
     var n = +form.querySelector('[name="plan-count"]').value || 5, note = $('.plan-note', form);
     var cands = DISHES.filter(function (d) {
       if (!d.el.classList.contains('tile')) return false;
-      if (noShell && d.al.indexOf('shellfish') >= 0) return false;
-      if (noFish && d.al.indexOf('fish') >= 0) return false;
-      if (noDairy && d.al.indexOf('dairy') >= 0) return false;
-      if (noWheat && d.al.indexOf('wheat') >= 0) return false;
+      /* protein category only: allergen rules wait for Fina's confirmed recipes */
+      if (noShell && d.kind === 'shrimp') return false;
+      if (noFish && d.kind === 'fish') return false;
       if (mild && d.spicy) return false;
       if (under && d.macros && d.macros.cal >= 500) return false;   /* ready for Fina's macros */
       return true;
@@ -399,6 +398,8 @@
     zipLine();
     syncMode();
     $('#empty-bag').hidden = bagCount() > 0;
+    /* Empty bag: one next action (Add meals), form deferred until a meal is chosen */
+    if (!bagCount() && $('#co-form')) $('#co-form').hidden = true;
 
     function slotLabel(v) { var hm = v.split(':'), h = +hm[0]; return (h > 12 ? h - 12 : h) + ':' + hm[1] + ' PM'; }
     function showConfirm(order) {

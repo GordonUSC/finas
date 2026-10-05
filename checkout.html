@@ -80,7 +80,7 @@
 
         <section class="step" id="pickup-block">
           <h2><span class="n">3</span>Pickup time</h2>
-          <p>Downey pickup, address and hours coming from Fina. Tap a half hour; the bars show how busy each one usually is (sample pattern).</p>
+          <p>Downey pickup, address and hours coming from Fina. Tap a half hour; the bars are example demand, not real orders.</p>
           <div class="heat" role="radiogroup" aria-label="Pickup time">
           <label><span class="bar"><i class="b1"></i></span><input type="radio" name="slot" value="17:30" aria-describedby="heat-key"><span class="t">5:30 PM<br>not busy</span></label>
           <label><span class="bar"><i class="b2"></i></span><input type="radio" name="slot" value="18:00" aria-describedby="heat-key"><span class="t">6:00 PM<br>medium</span></label>
@@ -112,14 +112,14 @@
             <div><label class="lbl" for="phone">Phone</label><input class="field" id="phone" name="phone" type="tel" autocomplete="tel"></div>
             <div><label class="lbl" for="email">Email</label><input class="field" id="email" name="email" type="email" autocomplete="email"></div>
           </div>
-          <label class="check"><input type="checkbox" name="remind"><span>Text me a reminder before the Thursday close. Optional.</span></label>
-          <label class="check"><input type="checkbox" name="updates"><span>Email me updates about this order. Optional.</span></label>
+          <label class="check"><input type="checkbox" name="remind"><span>Text me a reminder before the Thursday close. Demonstration only: no message is sent.</span></label>
+          <label class="check"><input type="checkbox" name="updates"><span>Email me updates about this order. Demonstration only: no message is sent.</span></label>
           <label class="check"><input type="checkbox" name="news"><span>Send me the new board on Fridays. Optional.</span></label>
         </section>
 
         <section class="step">
           <h2><span class="n">5</span>Calendar and confirm</h2>
-          <p>Unclaimed pickups are the most common way to lose a Sunday meal. Put it on the calendar now.</p>
+          <p>Add Sunday to your calendar.</p>
           <p style="padding:10px 0"><a class="btn" data-ics href="#" download="finas-sunday.ics">Add Sunday to my calendar (.ics)</a></p>
           <button type="submit" class="btn btn-ink">Place preview order</button>
           <p class="tape-msg" id="co-msg" role="status"></p>
